@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require("mongoose");
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
+const userRoutes = require('./routes/userRoutes')
 
 const app = express();
 app.use(express.json());
@@ -19,6 +20,8 @@ app.listen(PORT,()=>{
 app.get('/',(req,res)=>{
     res.status(200).send('Backend Running')
 })
+
+app.use('/users', userRoutes);
 
 try{
     const connect = async()=>{

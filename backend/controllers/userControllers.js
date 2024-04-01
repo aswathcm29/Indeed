@@ -47,7 +47,7 @@ const signup = async(req,res)=>{
     if(username=='' || password==''||email==''){
         return res.status(401).json({error:true,message:'Invalid credentials'})
     }
-    if(userName == undefined || password == undefined || email == undefined){
+    if(username == undefined || password == undefined || email == undefined){
         return res.status(401).json({error: true, message:"invalid credentials"})
     }
     try{
