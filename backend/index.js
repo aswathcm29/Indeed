@@ -3,11 +3,13 @@ const mongoose = require("mongoose");
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const userRoutes = require('./routes/userRoutes')
+const cors = require('cors')
 
 const app = express();
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(cookieParser());
+app.use(cors());
 const dotenv = require('dotenv');
 dotenv.config({path:'./.env'});
 

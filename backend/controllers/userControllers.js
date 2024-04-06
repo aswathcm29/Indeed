@@ -53,6 +53,7 @@ const signup = async(req,res)=>{
     try{
         const response = await userModel.findOne({username:username});
         if(response){
+            console.log('user exists')
             return res.status(401).json({error:true,message:'User already exists'})
         }
 
