@@ -2,6 +2,8 @@ const {userModel} = require('../models/userSchema');
 const saltRounds = 10;
 const { generateToken } = require('../utils/Token');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+
 
 
 const login = async(req,res)=>{
@@ -73,5 +75,4 @@ const signup = async(req,res)=>{
         return res.status(500).json({error:true,message:err.message})
     }
 }
-
-module.exports = {signup,login}
+module.exports = {signup,login,getUser}
